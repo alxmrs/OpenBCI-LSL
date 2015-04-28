@@ -4,6 +4,9 @@ import random
 import open_bci_v3 as bci
 import time
 
+
+
+
 # first create a new stream info (here we set the name to OpenBCI, the content-type to EEG, 8 channels, 250 Hz, and float-valued data)
 # The last value would be the serial number of the device or some other more or less locally unique identifier for the stream as far as available (you could also omit it but interrupted connections wouldn't auto-recover).
 info = StreamInfo('OpenBCI_32','EEG',8,250,'float32','usbserial-DN0093AG');
@@ -21,9 +24,7 @@ port = '/dev/tty.usbserial-DN0093AG'
 baud = 115200
 board = bci.OpenBCIBoard(port=port, baud=baud)
 
-print("now sending data...")
 
-board.startStreaming(sendData)
 
 def sendData(sample):
     # get 8 channel sample from OpenBCI Board; this is converted into a pylsl.vectorf (the data type that is expected by push_sample)
@@ -33,4 +34,8 @@ def sendData(sample):
     # now send it, will wait for board to send next packet.
     outlet.push_sample(mysample,stamp)
 
+    print((mysample,stamp)) # debug
+
+print("now sending data...")
+board.startStreaming(sendData)
 
