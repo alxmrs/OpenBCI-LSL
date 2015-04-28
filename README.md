@@ -5,6 +5,7 @@ SCCN's Lab Streaming Layer + Drivers to work with OpenBCI
 1. Make sure OpenBCI firmware is installed:
 http://docs.openbci.com/tutorials/02-Upload_Code_to_OpenBCI_Board
 2. Run the OBCI.py file:
+
 > python OBCI.py -p 'port-goes-here'
 
 To look up which port to use [on OSX], type:
