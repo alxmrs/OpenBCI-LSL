@@ -13,5 +13,6 @@ To look up which port to use [on OSX], type:
 Check out all the apps that work with LSL here: ftp://sccn.ucsd.edu/pub/software/LSL/Apps/
 
 ## Do I have to upgrade the firmware?
-The default openBCI firmware, as of writing, doesn't send the timestamp of when the EEG sample data was recorded. All timestamps for the channel data are calculated at the time they are received by the computer. This is problematic because accurate timestamps are crucially important for EEG signal processing. This update sends a milliseconds count over the auxiliary data array instead of accelerometer data.
+The default OpenBCI firmware, as of writing, doesn't send the timestamp of when the EEG sample data was recorded. All timestamps for the channel data are calculated at the time they are received by the computer. This is problematic because accurate timestamps are crucially important for EEG signal processing. This update sends a milliseconds count over the auxiliary data array instead of accelerometer data.
+
 
